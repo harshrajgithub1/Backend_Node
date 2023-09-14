@@ -8,10 +8,10 @@ let dbConfig = require('./database/db');
 const studentRoute = require('../backend/routes/student.route')
 
 // Configure mongoDB Database
-mongoose.set('useNewUrlParser', true);
-mongoose.set('useFindAndModify', false);
-mongoose.set('useCreateIndex', true);
-mongoose.set('useUnifiedTopology', true);
+//mongoose.set('useNewUrlParser', true);
+//mongoose.set('useFindAndModify', false);
+//mongoose.set('useCreateIndex', true);
+//mongoose.set('useUnifiedTopology', true);
 
 // Connecting MongoDB Database
 mongoose.Promise = global.Promise;
@@ -33,7 +33,7 @@ app.use('/students', studentRoute)
 
 
 // PORT
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 const server = app.listen(port, () => {
 console.log('Connected to port ' + port)
 })
@@ -42,6 +42,7 @@ console.log('Connected to port ' + port)
 app.use((req, res, next) => {
 res.status(404).send('Error 404!')
 });
+
 
 app.use(function (err, req, res, next) {
 console.error(err.message);
