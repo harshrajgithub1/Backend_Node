@@ -1,27 +1,3 @@
-// import logo from './logo.svg';
-// import './App.css';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
 // export default App;
 
 
@@ -133,51 +109,20 @@
 
 
 
-// import React from "react";
-// import { BrowserRouter as Router,Route, Link } from "react-router-dom";
-// import { Navbar, Container, Nav } from "react-bootstrap";
-// import "bootstrap/dist/css/bootstrap.css";
-// import CreateStudent from "../src/Components/create-student.component";
-// import EditStudent from "../src/Components/edit-student.component";
-// import StudentList from "../src/Components/student-list.component";
+import React, { Fragment } from 'react';
+import Route from './route/route.js';
+import { Navbar, Container, Nav, Row, Col } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.css";
+import Header from './Shared/Header.js';
 
-// const App = () => {
-//   return (
-//     <Router>
-//       <div className="App">
-//         <Navbar bg="dark" variant="dark">
-//           <Container>
-//             <Navbar.Brand>
-//               <Link to="/" className="nav-link">
-//                 React MERN Stack App
-//               </Link>
-//             </Navbar.Brand>
-//             <Nav className="justify-content-end">
-//               <Nav.Item>
-//                 <Link to="/create-student" className="nav-link">
-//                   Create Student
-//                 </Link>
-//               </Nav.Item>
-//               <Nav.Item>
-//                 <Link to="/student-list" className="nav-link">
-//                   Student List
-//                 </Link>
-//               </Nav.Item>
-//             </Nav>
-//           </Container>
-//         </Navbar>
-//       </div>
-//       <Container>
-//         {/* <Switch> */}
-//           <Route exact path="/" component={CreateStudent} />
-//           <Route path="/create-student" component={CreateStudent} />
-//           <Route path="/edit-student/:id" component={EditStudent} />
-//           <Route path="/student-list" component={StudentList} />
-//         {/* </Switch> */}
-//       </Container>
-//     </Router>
-//   );
-// };
+
+const App = () => {
+  return (
+    <Route/>  
+    
+    
+  );
+};
 
 // export default App;
 
@@ -339,50 +284,50 @@
 
 
 
-import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { Navbar, Container, Nav } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.css";
-import CreateStudent from "../src/Components/create-student.component";
-import EditStudent from "../src/Components/edit-student.component";
-import StudentList from "../src/Components/student-list.component";
+// import React from "react";
+// import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+// import { Navbar, Container, Nav } from "react-bootstrap";
+// import "bootstrap/dist/css/bootstrap.css";
+// import CreateStudent from "../src/Components/create-student.component";
+// import EditStudent from "../src/Components/edit-student.component";
+// import StudentList from "../src/Components/student-list.component";
 
-const App = () => {
-  return (
-    <Router>
-      <div className="App">
-        <Navbar bg="dark" variant="dark">
-          <Container>
-            <Navbar.Brand>
-              <Link to="/" className="nav-link">
-                React MERN Stack App
-              </Link>
-            </Navbar.Brand>
-            <Nav className="justify-content-end">
-              <Nav.Item>
-                <Link to="/create-student" className="nav-link">
-                  Create Student
-                </Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Link to="/student-list" className="nav-link">
-                  Student List
-                </Link>
-              </Nav.Item>
-            </Nav>
-          </Container>
-        </Navbar>
-      </div>
-      <Container>
-        <Routes> {/ Use Routes to wrap Route components /}
-          <Route path="/" element={<CreateStudent />} />
-          <Route path="/create-student" element={<CreateStudent />} />
-          <Route path="/edit-student/:id" element={<EditStudent />} />
-          <Route path="/student-list" element={<StudentList />} />
-        </Routes>
-      </Container>
-    </Router>
-  );
-};
+// const App = () => {
+//   return (
+//     <Router>
+//       <div className="App">
+//         <Navbar bg="dark" variant="dark">
+//           <Container>
+//             <Navbar.Brand>
+//               <Link to="/" className="nav-link">
+//                 React MERN Stack App
+//               </Link>
+//             </Navbar.Brand>
+//             <Nav className="justify-content-end">
+//               <Nav.Item>
+//                 <Link to="/create-student" className="nav-link">
+//                   Create Student
+//                 </Link>
+//               </Nav.Item>
+//               <Nav.Item>
+//                 <Link to="/student-list" className="nav-link">
+//                   Student List
+//                 </Link>
+//               </Nav.Item>
+//             </Nav>
+//           </Container>
+//         </Navbar>
+//       </div>
+//       <Container>
+//         <Routes> {/ Use Routes to wrap Route components /}
+//           <Route path="/" element={<CreateStudent />} />
+//           <Route path="/create-student" element={<CreateStudent />} />
+//           <Route path="/edit-student/:id" element={<EditStudent />} />
+//           <Route path="/student-list" element={<StudentList />} />
+//         </Routes>
+//       </Container>
+//     </Router>
+//   );
+// };
 
 export default App;
