@@ -21,7 +21,6 @@ const deleteStudent = () => {
 
 return (
 	<>
-	dfsdf
 	<tr>
 	<td>{name}</td>
 	<td>{email}</td>

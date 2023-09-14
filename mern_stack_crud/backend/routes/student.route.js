@@ -7,6 +7,7 @@ let studentSchema = require("../models/Student");
 
 // CREATE Student
 router.post("/create-student", (req, res, next) => {
+	console.log(req);
 	studentSchema.create(req.body)	
 	.then((result) => {
 		res.json(result);
@@ -31,19 +32,33 @@ router.get("/", (req, res) => {
 
 });
 
+//get by id
+router.get("/getstudent/:id", (req, res) => {
+
+	studentSchema.findById(req.params.id)	
+	.then((result) => {
+		res.json(result);
+	})
+	.catch((err) => {
+		res.send({ kq: 0, msg: 'something error' })
+	})
+
+
+});
+
 // UPDATE student
 router
 .route("/update-student/:id")
 // Get Single Student
 .get((req, res) => {
-	studentSchema.findById(
-		req.params.id, (error, data) => {
-	if (error) {
-		return next(error);
-	} else {
-		res.json(data);
-	}
-	});
+	console.log(req.params.id)
+	studentSchema.findById(req.params.id)	
+	.then((result) => {
+		res.json(result);
+	})
+	.catch((err) => {
+		res.send({ kq: 0, msg: 'something error' })
+	})
 })
 
 // Update Student Data
@@ -68,16 +83,17 @@ router
 // Delete Student
 router.delete("/delete-student/:id",
 (req, res, next) => {
-studentSchema.findByIdAndRemove(
-	req.params.id, (error, data) => {
-	if (error) {
-	return next(error);
-	} else {
-	res.status(200).json({
-		msg: data,
-	});
-	}
-});
+studentSchema.findByIdAndDelete(req.params.id)
+  .then((removedPerson) => {
+    if (removedPerson) {
+      console.log('Removed Person:', removedPerson);
+    } else {
+      console.log('No person found with that ID.');
+    }
+  })
+  .catch((err) => {
+    console.error('Error:', err);
+  });
 });
 
 module.exports = router;

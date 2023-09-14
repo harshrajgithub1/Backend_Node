@@ -2,6 +2,7 @@ import React from "react";
 import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { FormGroup, FormControl, Button } from "react-bootstrap";
+import axios from 'axios';
 
 const StudentForm = (props) => {
 	const validationSchema = Yup.object().shape({
@@ -26,6 +27,16 @@ const StudentForm = (props) => {
 				onSubmit={values => {
 					// same shape as initial values
 					console.log(values);
+					axios.post(
+						'http://localhost:4000/students/create-student',
+						values)
+							.then(res => {
+								if (res.status === 200)
+								alert('Student successfully created')
+								else
+								Promise.reject()
+							})
+							.catch(err => alert('Something went wrong'))
 				}}
 			>
 				{({ errors, touched }) => (
