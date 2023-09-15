@@ -31,6 +31,9 @@ return (
 			<th>Name</th>
 			<th>Email</th>
 			<th>Roll No</th>
+			<th>Date of Birth</th>
+			<th>Phone Number</th>
+			<th>Password</th>
 			<th>Action</th>
 		</tr>
 		</thead>

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 const StudentTableRow = (props) => {
-const { _id, name, email, rollno } = props.obj;
+const { _id, name, email, rollno, dateofbirth, phonenumber, password } = props.obj;
 
 const deleteStudent = () => {
 	axios
@@ -25,6 +25,9 @@ return (
 	<td>{name}</td>
 	<td>{email}</td>
 	<td>{rollno}</td>
+	<td>{dateofbirth}</td>
+	<td>{phonenumber}</td>
+	<td>{password}</td>
 	<td>
 		<Link className="edit-link"
 		to={"/edit-student/" + _id}>

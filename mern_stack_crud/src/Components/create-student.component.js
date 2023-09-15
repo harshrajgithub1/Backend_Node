@@ -6,7 +6,9 @@ import StudentForm from "./StudentForms";
 
 const CreateStudent = () => {
 const [formValues, setFormValues] =
-	useState({ name: '', email: '', rollno: '' })
+	useState({ name: '', email: '', rollno: '', dateofbirth: '', phonenumber: '', password:''})
+	//console.log("error");
+	//document.getElementById("harsh raj");
 
 
 const onSubmit = studentObject => {

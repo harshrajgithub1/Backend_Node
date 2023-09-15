@@ -10,8 +10,13 @@ const EditStudent = () => {
 	name: "",
 	email: "",
 	rollno: "",
+	dateofbirth: "",
+	phonenumber:"",
+	password:"",
 });
-	
+
+
+
 
 const onSubmit = (studentObject) => {
 	axios
@@ -34,8 +39,8 @@ useEffect(() => {
 		`http://localhost:4000/students/update-student/${id}`
 	)
 	.then((res) => {
-		const { name, email, rollno } = res.data;
-		setFormValues({ name, email, rollno });
+		const { name, email, rollno, dateofbirth, phonenumber, password} = res.data;
+		setFormValues({ name, email, rollno, dateofbirth, phonenumber, password });
 	})
 	.catch((err) => console.log(err));
 }, [id]);

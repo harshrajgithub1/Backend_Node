@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+//const { date } = require('yup');
 const Schema = mongoose.Schema;
 
 let studentSchema = new Schema({
@@ -10,7 +11,16 @@ email: {
 },
 rollno: {
 	type: Number
-}
+},
+dateofbirth: {
+	type: String
+},
+phonenumber: {
+	type: Number
+},
+password: {
+	type: String
+},
 }, {
 	collection: 'students'
 })
