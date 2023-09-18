@@ -6,6 +6,7 @@ let dbConfig = require('./database/db');
 
 // Express Route
 const studentRoute = require('../backend/routes/student.route')
+const userRoute = require('../backend/routes/user.route')
 
 // Configure mongoDB Database
 //mongoose.set('useNewUrlParser', true);
@@ -31,6 +32,7 @@ extended: true
 }));
 app.use(cors());
 app.use('/students', studentRoute)
+app.use('/users', userRoute)
 
 
 // PORT
