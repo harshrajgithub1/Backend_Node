@@ -13,6 +13,7 @@ const studentRoute = require('../backend/routes/student.route')
 //mongoose.set('useCreateIndex', true);
 //mongoose.set('useUnifiedTopology', true);
 
+
 // Connecting MongoDB Database
 mongoose.Promise = global.Promise;
 mongoose.connect(dbConfig.db).then(() => {

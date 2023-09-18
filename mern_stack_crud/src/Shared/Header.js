@@ -17,6 +17,16 @@ const Header = () => {
         </div>
         <div className='menu-link'>
           <ul>
+          <li>
+              <Link to="/login" className="nav-link">
+                Login
+              </Link>
+            </li>
+            <li>
+              <Link to="/register" className="nav-link">
+                Registration
+              </Link>
+            </li>
             <li>
               <Link to="/create-student" className="nav-link">
                 Create Student
