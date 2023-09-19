@@ -173,6 +173,7 @@
 
 
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const RegistrationPage = () => {
   const [formData, setFormData] = useState({
@@ -193,16 +194,30 @@ const RegistrationPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    let obj={
+      name: 'Nishant',
+      email : 'nis@te.po',
+      password: '12'
+    }
     // Simulate registration (replace with actual registration logic)
     if (formData.username && formData.email && formData.password) {
-      // Here, you can send the registration data to your server for processing.
-      // For this example, we'll just set the 'registered' state to true.
+      axios.post(
+        'http://localhost:4000/users/create-user',
+        obj)
+          .then(res => {
+            if (res.status === 200)
+            alert('Student successfully created')
+            else
+            Promise.reject()
+          })
+          .catch(err => alert('Something went wrong'))
       setRegistered(true);
     } else {
       alert('Please fill in all fields.');
     }
   };
 
+  
   return (
     <div>
       {registered ? (
