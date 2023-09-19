@@ -1,11 +1,11 @@
-/* RegistrationForm.css */
+
 .registr-form {
 
     display: flex;
     flex-direction: column;
-    /* max-width: 400px; */
+    
     margin: 10px 100px;
-    /* background-color: rgb(147, 158, 83); */
+   
     padding: 2%;
     border: 1px solid gray;
   }
@@ -30,4 +30,10 @@
   button:hover {
     background-color: #6e3d3d;
   }
-  
+   
+
+
+
+
+
+
