@@ -6,7 +6,8 @@ let dbConfig = require('./database/db');
 
 // Express Route
 const studentRoute = require('../backend/routes/student.route')
-const userRoute = require('../backend/routes/user.route')
+const userRoute = require('../backend/routes/user.route');
+// const { PORT } = require('../src/Constants/constants');
 
 // Configure mongoDB Database
 //mongoose.set('useNewUrlParser', true);

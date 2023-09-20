@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { APP_URL } from '../Constants/constants';
 
 const StudentTableRow = (props) => {
 const { _id, name, email, rollno, dateofbirth, phonenumber, password } = props.obj;
@@ -9,7 +10,7 @@ const { _id, name, email, rollno, dateofbirth, phonenumber, password } = props.o
 const deleteStudent = () => {
 	axios
 	.delete(
-"http://localhost:4000/students/delete-student/" + _id)
+`${APP_URL}/students/delete-student/` + _id)
 	.then((res) => {
 		if (res.status === 200) {
 		alert("Student successfully deleted");

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import StudentForm from "./StudentForms";
+import { APP_URL } from "../Constants/constants";
 
 
 const CreateStudent = () => {
@@ -13,7 +14,7 @@ const [formValues, setFormValues] =
 
 const onSubmit = studentObject => {
 	axios.post(
-'http://localhost:4000/students/create-student',
+`${APP_URL}/students/create-student`,
 	studentObject)
 	.then(res => {
 		if (res.status === 200)

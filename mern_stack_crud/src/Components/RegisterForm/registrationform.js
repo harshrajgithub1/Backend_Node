@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
+import { APP_URL } from '../../Constants/constants';
 
 const RegistrationPage = () => {
   const [formData, setFormData] = useState({
@@ -30,7 +31,7 @@ const RegistrationPage = () => {
     // Simulate registration (replace with actual registration logic)
     if (formData.username && formData.email && formData.password) {
       axios.post(
-        'http://localhost:4000/users/create-user',
+        `${APP_URL}/users/create-user`,
         obj)
           .then(res => {
             if (res.status === 200)

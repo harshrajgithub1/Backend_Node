@@ -5,6 +5,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './login.css';
+import { APP_URL } from '../../Constants/constants';
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({
@@ -33,7 +34,7 @@ const LoginPage = () => {
     }
     //2 check if user exist in database
     axios.get(
-      'http://localhost:4000/users/getuserbyemail/'+formData.username
+      `${APP_URL}/users/getuserbyemail/`+formData.username
       )
         .then(res => {
           console.log(res);
