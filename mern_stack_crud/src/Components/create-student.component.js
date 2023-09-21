@@ -1,8 +1,12 @@
-
+ 
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import StudentForm from "./StudentForms";
 import { APP_URL } from "../Constants/constants";
+
+//import React, { Component } from 'react';
+import LoginPage from '../Components/Login/login';
+
 
 
 const CreateStudent = () => {

@@ -17,7 +17,9 @@ const StudentForm = (props) => {
 			.integer("Invalid roll number")
 			.required("Required"),
 		dateofbirth: 
-		 Yup.date()
+		 Yup.date(),
+
+		 password:  Yup.number()
 
 
 		//            .positive("Invalid date of birth")
@@ -65,6 +67,17 @@ const StudentForm = (props) => {
 						<Field name="dateofbirth" type="date" className="form-control"/>
 						{errors.dateofbirth && touched.dateofbirth ? ( <div className="text-danger">{errors.dateofbirth}</div>
 				        ) : null}
+
+
+					    <label className="control-label">Phone Number</label>
+ 						<Field name="phonenumber" type="phonenumber" className="form-control"/>
+ 						{errors.phonenumber && touched.phonenumber ? (<div className="text-danger">{errors.phonenumber}</div> 
+						): null}
+
+ 						<label className="control-label">Password</label>
+ 						<Field name="password" type="password" className="form-control" />
+ 						{errors.password && touched.password ? (<div className="text-danger">{errors.password}</div>
+						) : null}
 
 						<Button variant="danger" size="lg"
 							block="block" type="submit">

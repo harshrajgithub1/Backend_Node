@@ -3,6 +3,9 @@ let mongoose = require('mongoose');
 let cors = require('cors');
 let bodyParser = require('body-parser');
 let dbConfig = require('./database/db');
+let bcrypt = require('bcrypt');
+let jwt = require('jsonwebtoken');
+
 
 // Express Route
 const studentRoute = require('../backend/routes/student.route')
@@ -53,3 +56,25 @@ console.error(err.message);
 if (!err.statusCode) err.statusCode = 500;
 res.status(err.statusCode).send(err.message);
 });
+
+
+//Login Api
+app.post("/Login", async (req,   resp)) => {
+     if(req.body.password && req.body.email){
+		let user = await User.findOne(req.body).select("-password");
+		if(user) {
+			jwt.sign({ user}, jwtkey, {expiresIn: "2h"}, (err, token) =>{
+				if(err){
+					resp.send({result:"something went wrong, Please try after sometime"})
+				}
+                resp.send(user,{auth: token})
+			})
+			
+		}else {
+			resp.send({result: "No User found"})
+		}
+
+	 }else{
+          resp.send({result:"No User found"})
+	 }
+}

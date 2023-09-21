@@ -111,6 +111,12 @@ return (
 						{errors.dateofbirth && touched.dateofbirth ? ( <div className="text-danger">{errors.dateofbirth}</div>
 				        ) : null}
 
+
+						<label className="control-label">Password</label>
+ 						<Field name="password" type="password" className="form-control" />
+ 						{errors.password && touched.password ? (<div className="text-danger">{errors.password}</div>
+						) : null}
+
 						<Button variant="danger" size="lg"
 							block="block" type="submit">
 							Submit
