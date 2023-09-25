@@ -11,7 +11,6 @@ import Header from './Shared/Header.js';
 import CreateStudent from './Components/create-student.component.js';
 
 import Cylinder3d from "./Components/3dModels/Cylinder3d.jsx"
-import Player from "./components/Player";
 
 
 const App = () => {

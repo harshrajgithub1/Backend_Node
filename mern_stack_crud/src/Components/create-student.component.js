@@ -11,11 +11,11 @@ import { APP_URL } from "../Constants/constants";
 
 import { Canvas } from "@react-three/fiber";
 
-import Cylinder3d from "../3dModels/Cylinder3d";
+import Cylinder3d from "../Components/3dModels/Cylinder3d";
 
 //import React, { Component } from 'react';
 import LoginPage from '../Components/Login/login';
-
+import ThreeDModel from "./ThreeDModel";
 
 
 const CreateStudent = () => {
@@ -45,15 +45,44 @@ return(
 	</StudentForm>
 
 
+	
+      <section className='App-header'>
 
-
-<section className='App-header'>
+	  <ThreeDModel />
+        {/* Canvas 1 */}
         <Canvas>
-          
+          <pointLight position={[10, 10, 10]} />
+          <ambientLight />
+          <Cylinder3d position={[-1.2, 0, 0]} />
+          <Cylinder3d position={[1.2, 0, 0]} />
+        </Canvas>
+ 
+        {/* Canvas 2 */}
+        <Canvas>
+          <pointLight position={[10, 10, 10]} />
+          <ambientLight intensity={0.5} />
+          <Cylinder3d position={[-1.2, 0, 0]} wireframe={true} />
+          <Cylinder3d position={[1.2, 0, 0]} wireframe={true} />
+        </Canvas>
+ 
+        {/* Canvas 3 */}
+        <Canvas>
+          <pointLight position={[10, 10, 10]} />
+          <ambientLight color={"red"} />
           <Cylinder3d position={[-1.2, 0, 0]} />
           <Cylinder3d position={[1.2, 0, 0]} />
         </Canvas>
       </section>
+    
+
+{/* <section className='App-header'>
+        <Canvas>
+		<pointLight position={[10, 10, 10]} />
+		<ambientLight /> 
+          <Cylinder3d position={[-1.2, 0, 0]} />
+          <Cylinder3d position={[1.2, 0, 0]} />
+        </Canvas>
+      </section> */}
 
 </>
 )
