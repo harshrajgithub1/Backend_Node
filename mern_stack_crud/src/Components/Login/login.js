@@ -118,6 +118,7 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
+//import jwt from "jsonwebtoken";
 import './login.css';
 //import StudentForm from "./StudentForms";
 import { APP_URL } from '../../Constants/constants';
@@ -182,6 +183,14 @@ const LoginPage = () => {
     e.preventDefault();
     // Simulate authentication (replace with actual authentication logic)
     
+  //   const token = jwt.login(
+  //     { user_id: user._id, email,  roles: user.roles[0] },
+  //     process.env.TOKEN_KEY,
+  //     {
+  //         expiresIn: "9h",
+  //     }
+  // );
+
   };
 
   return (

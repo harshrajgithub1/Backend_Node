@@ -21,6 +21,9 @@ phonenumber: {
 password: {
 	type: String
 },
+fees:{
+	type: Number
+},
 }, {
 	collection: 'students'
 })

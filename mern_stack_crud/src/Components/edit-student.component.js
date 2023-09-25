@@ -18,6 +18,7 @@ const EditStudent = () => {
 	rollno: "",
 	dateofbirth: "",
 	phonenumber:"",
+	fees:"",
 });
 const validationSchema = Yup.object().shape({
 	name: Yup.string().required("Required"),
@@ -29,12 +30,13 @@ const validationSchema = Yup.object().shape({
 		.integer("Invalid roll number")
 		.required("Required"),
 	dateofbirth: 
-	 Yup.date()
+	 Yup.date(),
 
 
 	//            .positive("Invalid date of birth")
 	// 		   .integer("Invalid date of birth")
-			  // .required("Required"),     
+			  // .required("Required"), 
+	
 });
 
 
@@ -96,15 +98,18 @@ return (
 							<div className="text-danger">{errors.name}</div>
 						) : null}
 
+
 						<label className="control-label">Email</label>
 						<Field name="email" type="email" className="form-control" />
 						{errors.email && touched.email ? <div className="text-danger">{errors.email}</div> : null}
+
 
 						<label className="control-label">Roll No</label>
 						<Field name="rollno" className="form-control" />
 						{errors.rollno && touched.rollno ? (
 							<div className="text-danger">{errors.rollno}</div>
 						) : null}
+
 
 						<label className="control-label">Date of Birth</label>
 						<Field name="dateofbirth" type="date" className="form-control"/>
@@ -116,6 +121,13 @@ return (
  						<Field name="password" type="password" className="form-control" />
  						{errors.password && touched.password ? (<div className="text-danger">{errors.password}</div>
 						) : null}
+
+
+						<label className="control-label">Fees</label>
+ 						<Field name="fees" type="password" className="form-control" />
+ 						{errors.password && touched.password ? (<div className="text-danger">{errors.password}</div>
+						) : null}
+
 
 						<Button variant="danger" size="lg"
 							block="block" type="submit">

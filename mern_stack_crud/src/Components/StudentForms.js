@@ -79,6 +79,14 @@ const StudentForm = (props) => {
  						{errors.password && touched.password ? (<div className="text-danger">{errors.password}</div>
 						) : null}
 
+
+
+						<label className="control-label">Fees</label>
+ 						<Field name="fees" type="fees" className="form-control" />
+ 						{errors.fees && touched.fees ? (<div className="text-danger">{errors.fees}</div>
+						) : null}
+
+
 						<Button variant="danger" size="lg"
 							block="block" type="submit">
 							{props.children}

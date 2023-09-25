@@ -34,6 +34,7 @@ return (
 			<th>Date of Birth</th>
 			<th>Phone Number</th>
 			<th>Password</th>
+			<th>Fees</th>
 			<th>Action</th>
 		</tr>
 		</thead>

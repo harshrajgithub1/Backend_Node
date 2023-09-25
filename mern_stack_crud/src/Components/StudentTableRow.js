@@ -5,7 +5,7 @@ import axios from "axios";
 import { APP_URL } from '../Constants/constants';
 
 const StudentTableRow = (props) => {
-const { _id, name, email, rollno, dateofbirth, phonenumber, password } = props.obj;
+const { _id, name, email, rollno, dateofbirth, phonenumber, password, fees } = props.obj;
 
 const deleteStudent = () => {
 	axios
@@ -29,6 +29,7 @@ return (
 	<td>{dateofbirth}</td>
 	<td>{phonenumber}</td>
 	<td>{password}</td>
+	<td>{fees}</td>
 	<td>
 		<Link className="edit-link"
 		to={"/edit-student/" + _id}>
